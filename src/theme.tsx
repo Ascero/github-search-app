@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { red, black } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 
 // A custom theme for this app
 const theme = createTheme({

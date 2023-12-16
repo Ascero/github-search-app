@@ -1,18 +1,8 @@
-import './App.css';
-import { ApolloProvider } from '@apollo/client';
-import { apolloClient } from './core/graphql/apollo.client';
-import CardResult from './layout/Card/CardResult';
-import Header from './layout/Header/Header';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
 function App() {
-  return (
-    <>
-      <ApolloProvider client={apolloClient}>
-        <Header />
-        <CardResult />
-      </ApolloProvider>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
