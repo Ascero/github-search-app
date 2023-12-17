@@ -13,7 +13,10 @@ const REPOSITORY_FRAGMENTS = gql`
 `;
 
 export const SEARCH_REPOSITORIES_QUERY = gql`
-  query SearchRepositories($searchTerm: String!, $first: Int!) {
+  query SearchRepositories(
+    $searchTerm: String = "is:public"
+    $first: Int = 20
+  ) {
     search(query: $searchTerm, type: REPOSITORY, first: $first) {
       edges {
         node {
