@@ -13,4 +13,5 @@ export interface SearchContextProps {
   searchTerm: string | null;
   // eslint-disable-next-line no-unused-vars
   updateSearchTerm: (term: string) => void;
+  updateAfter: () => void;
 }

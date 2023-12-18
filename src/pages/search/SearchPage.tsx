@@ -1,18 +1,20 @@
 import React from 'react';
-import CardsGrid from '../../layout/CardsGrid/CardsGrid';
+import SearchGrid from './SearchGrid/SearchGrid';
 import { apolloSearchClient } from '../../core/graphql/apollo.client';
 import { ApolloProvider } from '@apollo/client';
 import SearchBar from './SearchBar/SearchBar';
-import { ApolloContextProvider } from '../../core/graphql/store/ApolloContextProvider';
+import { SearchContextProvider } from './context/SearchContextProvider';
+import SearchBottom from './SearchBottom/SearchBottom';
 
 const SearchPage: React.FC = () => {
   return (
     <>
       <ApolloProvider client={apolloSearchClient}>
-        <ApolloContextProvider>
+        <SearchContextProvider>
           <SearchBar></SearchBar>
-          <CardsGrid />
-        </ApolloContextProvider>
+          <SearchGrid />
+          <SearchBottom />
+        </SearchContextProvider>
       </ApolloProvider>
     </>
   );

@@ -15,9 +15,14 @@ const REPOSITORY_FRAGMENTS = gql`
 export const SEARCH_REPOSITORIES_QUERY = gql`
   query SearchRepositories(
     $searchTerm: String = "is:public"
-    $first: Int = 20
+    $first: Int = 10
+    $after: String
   ) {
-    search(query: $searchTerm, type: REPOSITORY, first: $first) {
+    search(query: $searchTerm, type: REPOSITORY, first: $first, after: $after) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       edges {
         node {
           ...RepositoryFields

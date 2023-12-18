@@ -7,4 +7,5 @@ export const SearchCtxt = createContext<SearchContextProps>({
   results: [],
   loading: false,
   error: undefined,
+  updateAfter: () => {},
 });
