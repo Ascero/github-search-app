@@ -19,13 +19,14 @@ const FavoritesContextProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   const handleRemoveFavorite = (removedFavorite: GithubRepository) => {
-    const updatedFavorites = favorites.filter((fav) => {
-      return (
-        fav.forkCount !== removedFavorite.forkCount &&
-        fav.name !== removedFavorite.name
-      );
-    });
-    console.log(favorites);
+    const updatedFavorites = favorites.filter(
+      (fav) =>
+        !(
+          fav.forkCount === removedFavorite.forkCount &&
+          fav.name === removedFavorite.name
+        ),
+    );
+
     setFavorites(() => updatedFavorites);
     sessionStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     sessionStorage.removeItem(
