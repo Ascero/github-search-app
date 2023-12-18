@@ -1,0 +1,27 @@
+.resultCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 300px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(181, 148, 16, 0.4);
+  transition: transform 0.7s;
+}
+
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.resultCard:hover {
+  transform: scale(1.05);
+}
+
+.fullContent {
+  width: 100%;
+  max-width: 500px;
+}
