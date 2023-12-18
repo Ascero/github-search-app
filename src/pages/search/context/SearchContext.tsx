@@ -1,7 +1,7 @@
 import { createContext } from 'react';
-import { ApolloContextProps } from './models/apollo-provider.interface';
+import { SearchContextProps } from './models/search-provider.interface';
 
-export const ApolloCtxt = createContext<ApolloContextProps>({
+export const SearchCtxt = createContext<SearchContextProps>({
   searchTerm: 'is:public',
   updateSearchTerm: () => {},
   results: [],

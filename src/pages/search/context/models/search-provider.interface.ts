@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
-import { SearchResult } from '../../../models/github-repository.interface';
 import { ApolloError } from '@apollo/client';
+import { SearchResult } from '../../../../core/models/github-repository.interface';
 
-export interface ApolloProviderWrapperProps {
+export interface SearchProviderWrapperProps {
   children: ReactNode;
 }
 
-export interface ApolloContextProps {
+export interface SearchContextProps {
   results: SearchResult[];
   loading: boolean;
   error: ApolloError | undefined;

@@ -2,28 +2,28 @@
   display: flex;
   width: 100%;
   background-color: black;
-  color: #FFD700;
-  padding-top: 1rem;
-
-  h1 {
-    margin: 0 auto;
-  }
+  color: #B59410;
+  align-content: center;
+  justify-content: center;
 }
 
-.input_wrapper {
+.inputWrapper {
   display: flex;
   background-color: black;
   padding: 1rem 0 2rem;
-  color: #FFD700;
+  align-content: center;
+  justify-content: center;
 
   input {
     margin: 0 auto;
-    background-color: transparent;
-    border: 5px solid #FFD700;
-    border-radius: 12px;
     padding: 16px;
     font-size: 16px;
     width: 500px;
-    color: #FFD700;
+    min-width: 200px;
+    color: #B59410;
+  }
+
+  input::placeholder {
+    opacity: 1;
   }
 }

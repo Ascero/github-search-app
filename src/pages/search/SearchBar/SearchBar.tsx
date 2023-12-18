@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useContext } from 'react';
 import styles from './SearchBar.module.css';
-import { ApolloCtxt } from '../../../core/graphql/store/ApolloContext';
+import { SearchCtxt } from '../context/SearchContext';
+import TextField from '@mui/material/TextField';
 
 const SearchBar: React.FC = () => {
-  const searchContext = useContext(ApolloCtxt);
+  const searchContext = useContext(SearchCtxt);
   const debounceTimeoutRef = React.useRef<number | null>(null);
 
   const handleInputChange = (newValue: ChangeEvent<HTMLInputElement>) => {
@@ -21,11 +22,17 @@ const SearchBar: React.FC = () => {
       <div className={styles.title}>
         <h1>Search for repositories in Github</h1>
       </div>
-      <div className={styles.input_wrapper}>
-        <input
-          type="text"
-          placeholder="Search for repositories in Github"
+      <div className={styles.inputWrapper}>
+        <TextField
+          id="searchTerm"
+          label="Search"
+          color="primary"
           onChange={handleInputChange}
+          placeholder="Start typing here..."
+          focused
+          InputProps={{
+            style: { color: '#FFFFFF' },
+          }}
         />
       </div>
     </>
